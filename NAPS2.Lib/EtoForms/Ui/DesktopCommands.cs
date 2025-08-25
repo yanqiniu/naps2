@@ -243,6 +243,10 @@ public class DesktopCommands
             Text = UiStrings.Reorder,
             IconName = "arrow_refresh"
         };
+        Duplex = new ActionCommand(imageListActions.Duplex)
+        {
+            Text = UiStrings.Duplex
+        };
         Interleave = new ActionCommand(imageListActions.Interleave)
         {
             Text = UiStrings.Interleave
@@ -400,6 +404,7 @@ public class DesktopCommands
     public ActionCommand MoveUp { get; set; }
     public ActionCommand MoveDown { get; set; }
     public ActionCommand ReorderMenu { get; set; }
+    public ActionCommand Duplex { get; set; }
     public ActionCommand Interleave { get; set; }
     public ActionCommand Deinterleave { get; set; }
     public ActionCommand AltInterleave { get; set; }

@@ -105,6 +105,9 @@ public class AutomatedScanningOptions
     #endregion
 
     #region Order Options
+    
+    [Option("Duplex", HelpText = "Duplex ordering pages before saving.")]
+    public bool Duplex { get; set; }
 
     [Option("interleave", HelpText = "Interleave pages before saving.")]
     public bool Interleave { get; set; }

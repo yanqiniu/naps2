@@ -340,6 +340,8 @@ public abstract class DesktopForm : EtoFormBase
             CreateToolbarStackedButtons(Commands.MoveUp, Commands.MoveDown);
         if (!hiddenButtons.HasFlag(ToolbarButtons.Reorder))
             CreateToolbarMenu(Commands.ReorderMenu, new MenuProvider()
+                .Append(Commands.Duplex)
+                .Separator()
                 .Append(Commands.Interleave)
                 .Append(Commands.Deinterleave)
                 .Separator()

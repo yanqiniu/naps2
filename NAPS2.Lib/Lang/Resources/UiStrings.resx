@@ -267,6 +267,9 @@
   <data name="Reorder" xml:space="preserve">
     <value>Reorder</value>
   </data>
+  <data name="Duplex" xml:space="preserve">
+    <value>Duplex</value>
+  </data>
   <data name="Interleave" xml:space="preserve">
     <value>Interleave</value>
   </data>

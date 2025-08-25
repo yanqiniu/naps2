@@ -94,6 +94,38 @@ public abstract class ListMutation<T> where T : notnull
             }
         }
     }
+    
+    
+    /// <summary>
+    /// Reverse the seconds half of the whole list, and then apply interleave.
+    /// This is for single-sided single-pass scanner. Users can then scan all
+    /// documents front sides, flip the whole stack, and then scan all back sides.
+    /// </summary>
+    public class DuplexAdjustment : ListMutation<T>
+    {
+        public override void Apply(List<T> list, ref ListSelection<T> selection)
+        {
+            
+            // Partition the list in two
+            int count = list.Count;
+            int split = (count + 1) / 2;
+            var p1 = list.Take(split).ToList();
+            var p2 = list.Skip(split).ToList();
+
+            p2.Reverse();
+
+            // Rebuild the list, taking alternating items from each the partitions
+            list.Clear();
+            for (int i = 0; i < count; ++i)
+            {
+                list.Add(i % 2 == 0 ? p1[i / 2] : p2[i / 2]);
+            }
+            
+
+            // Empty as we aren't using it. 
+            selection = ListSelection.Empty<T>();
+        }
+    }
 
     /// <summary>
     /// Converts lists in the order 1,3,5,2,4,6 to 1,2,3,4,5,6.

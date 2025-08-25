@@ -753,6 +753,15 @@ namespace NAPS2.Lang.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Duplex.
+        /// </summary>
+        internal static string Duplex {
+            get {
+                return ResourceManager.GetString("Duplex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
         internal static string Edit {

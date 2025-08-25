@@ -294,6 +294,10 @@ internal class AutomatedScanning
             {
                 imageList.Mutate(new ImageListMutation.Interleave());
             }
+            else if (_options.Duplex)
+            {
+                imageList.Mutate(new ImageListMutation.DuplexAdjustment());
+            }
 
             if (_options.Reverse)
             {

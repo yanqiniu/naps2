@@ -52,6 +52,8 @@ public class ImageListActions
 
     public void DeleteSelected() => _imageList.Mutate(new ImageListMutation.DeleteSelected(), Selection);
 
+    public void Duplex() => _imageList.Mutate(new ImageListMutation.DuplexAdjustment(), Selection);
+
     public void Interleave() => _imageList.Mutate(new ImageListMutation.Interleave(), Selection);
 
     public void Deinterleave() => _imageList.Mutate(new ImageListMutation.Deinterleave(), Selection);

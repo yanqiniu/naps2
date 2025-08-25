@@ -137,6 +137,8 @@ public class MacDesktopForm : DesktopForm
                         Commands.MoveUp,
                         Commands.MoveDown,
                         new SeparatorMenuItem(),
+                        Commands.Duplex,
+                        new SeparatorMenuItem(),
                         Commands.Interleave,
                         Commands.Deinterleave,
                         new SeparatorMenuItem(),
